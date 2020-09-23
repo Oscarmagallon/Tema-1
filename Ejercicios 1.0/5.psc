@@ -1,0 +1,18 @@
+Algoritmo ejer5
+	Definir num1,num2,num3 Como Entero
+	Escribir "Dime un numero";
+	leer num1
+	Escribir "Dime un numero";
+	leer num2
+	Escribir "Dime un numero";
+	leer num3
+	Si num1<0 Entonces
+		Escribir num1*num2*num3;
+	SiNo
+		Escribir num1+num2+num3
+	Fin Si
+	
+	
+FinAlgoritmo
+
+
