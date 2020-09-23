@@ -1,8 +1,11 @@
 Algoritmo sin_titulo
-	Definir edad Como Entero
-	Escribir "Dime tu edad"
-	Leer edad
-	Escribir  "Tu edad en 10 años es", edad + 10;
+	Definir nombre Como Caracter
+	Definir apellido Como Caracter
+	Escribir "Dime tu nombre";
+	Leer nombre;
+	Escribir  "Dime tu apellido";
+	Leer apellido
+	Escribir nombre," ", apellido;
 
 
 	
