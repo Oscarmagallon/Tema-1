@@ -1,4 +1,4 @@
-Algoritmo 14
+Algoritmo ejer14
 	definir num Como Entero
 	Definir cont Como Entero
 	Definir Maximo Como Entero
@@ -9,7 +9,7 @@ Algoritmo 14
 	cont=0
 	Maximo=num
 	Mientras(contador<Maximo) Hacer
-		si (num Mod 2=0) Entonces
+		si (num Mod 2==0) Entonces
 			suma=num+suma;
 			contador=contador +1
 		FinSi
