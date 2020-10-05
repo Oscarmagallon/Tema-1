@@ -1,4 +1,4 @@
-Algoritmo multiplicar
+Algoritmo ejer9
 	Definir num Como Entero
 	definir cont como entero
 	
