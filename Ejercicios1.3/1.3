@@ -1,13 +1,11 @@
 Algoritmo ejr1
-	Definir nombre,aux,nom Como Caracter
+	Definir frase, nomRves Como Caracter;
+	Definir i Como Entero;
 	
-	Escribir "Escribe un nombre"
-	Leer nombre
-	
-	Para i=Longitud(nombre) Hasta 0 Con Paso 1 Hacer
-		nom= Subcadena(nombre,i,i)
-		aux=aux+nom
-		
+	Escribir "Dime tu nombre";
+	Leer frase;
+	Para i=Longitud(frase) Hasta 0 Con Paso -1 Hacer
+		nomRves=nomRves+Subcadena(frase,i,i);
 	Fin Para
-	Escribir aux
+	Escribir nomRves;
 FinAlgoritmo
