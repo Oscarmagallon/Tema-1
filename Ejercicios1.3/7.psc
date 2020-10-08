@@ -7,11 +7,12 @@ Algoritmo sin_titulo
 	
 	//----------------Quitar espacios del principio
 	Mientras Subcadena(frase,i,i) == " "  Hacer
+		solucion = Subcadena(frase,i,Longitud(frase));
 		i=i+1;
 	Fin Mientras
 	
 	solucion = Subcadena(frase,i,Longitud(frase));
-	Escribir solucion;
+	
 	
 	//-----------------Fin quitar espacios principio
 	
@@ -22,23 +23,20 @@ Algoritmo sin_titulo
 	Fin Mientras
 	solucion=Subcadena(solucion,0,i);
 	
-	
 	//----------------Fin quitar espacios del Final
+	//----------------Mayusculas
 	
-		si Subcadena(frase,i,i)=" " Entonces
-			Escribir Mayusculas(Subcadena(frase,i,i+1));
+	Para i=0 Hasta Longitud(frase)-1 Con Paso 1 Hacer
+		
+		Si Subcadena(frase,i,i)==" " Entonces
+			solucion= solucion+Mayusculas(subcadena(frase,i,i+1));
 			i=i+1;
-		sino 
-			Escribir  Sin Saltar Minusculas(Subcadena(frase,i,i));
-		FinSi
-		
-		
-		
-		
-		
-	Para i=Longitud(frase) Hasta 0 Con Paso -1 Hacer
+		SiNo
+			solucion= solucion+Minusculas(subcadena(frase,i,i));
+		Fin Si
 		
 	Fin Para
-
+	//-----------------FinMayusculas
+	
 FinAlgoritmo
  
