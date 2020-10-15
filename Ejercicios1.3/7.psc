@@ -39,6 +39,7 @@ Algoritmo sin_titulo
 	//----------------Fin quitar espacios.
 	
 	//----------------Mayusculas
+	
 	solucion="";
 	Para i=0 Hasta Longitud(frase)-1 Con Paso 1 Hacer
 		
@@ -46,6 +47,7 @@ Algoritmo sin_titulo
 			solucion= solucion+Mayusculas(subcadena(frase,i,i+1));
 			i=i+1;
 		SiNo
+			
 			solucion= solucion+Minusculas(subcadena(frase,i,i));
 		Fin Si
 		
