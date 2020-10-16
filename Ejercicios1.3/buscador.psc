@@ -1,7 +1,7 @@
 Algoritmo buscardor
 	Definir txt, pal, palmin, txtmin Como Caracter;
 	Definir i, long, longpal, cont Como Entero
-	txt=" que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal ";
+	txt=" que tal que tal Hola que tal Hola que tal Hola tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal";
 	Escribir "Dime una palabra para buscar";
 	Leer pal;
 	cont=0;
