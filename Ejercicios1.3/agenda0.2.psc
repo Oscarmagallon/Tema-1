@@ -1,9 +1,16 @@
 Algoritmo vAgenda
-	Definir num,i Como Entero;
-	Definir nombre,contbusc,i como caracter;
+	Definir num,i,tam como Entero;
+	Definir nombre,nombusc,vDatos,telefono,nomcomp,borrado,editar,nomedit como caracter;
+	num=0;
+	tam=10;
+	Dimension vDatos[tam];
 	
-	Dimension datos[4];
+	Para i=0 Hasta tam-1 con paso 1 Hacer
+		vDatos[i] = "";
+	FinPara
+
 	
+
 	Repetir
 		Escribir "1- Añadir contacto"; 
 		Escribir "2- Buscar contacto"; 
@@ -15,19 +22,62 @@ Algoritmo vAgenda
 		leer num;
 		Segun num Hacer
 			1:
-				Escribir "Dime el nombre y numero de un contacto";
-				Leer datos[i]
-				i=i+1;
+				Escribir "Dime el nombre del contacto";
+				Leer nombre;
+				Escribir "Dime el telefono a buscar";
+				Leer telefono;
+				nomcomp=nombre+";"+telefono;
+				
+				Para i=0 Hasta tam-1 con paso 1 Hacer
+					si (vDatos[i] == "") Entonces
+						vDatos[i] = nomcomp;
+						i=tam;
+					FinSi
+				FinPara
+				
 			2:
-				Escribir "Dime un contacto a buscar";
-				Leer contbusc
-				Si contbusc=datos[i] Entonces
-					Escribir contbusc
-				Fin Si
+				Escribir "Dime el nombre y el numero a buscar";
+				leer nombusc;
+				para i= 0 Hasta tam-1 con paso 1 Hacer
+					si vDatos[i] == nombusc Entonces
+						Escribir vDatos[i];
+					FinSi
+				FinPara
+				
+				
 			3:
-				datos[i] == "";
+				Escribir "Dime el nombre del empleado a borrar";
+				leer borrado;
+				Para i=0 Hasta tam-1 Con Paso 1 Hacer
+					si vDatos[i]=borrado Entonces
+						vDatos[i] = "";
+					FinSi
+				FinPara	
+				
+				
+				
+			4:	
+				Escribir "¿Que contacto quieres editar?";
+				leer editar;
+				Para i=0 Hasta tam-1 Con Paso 1 Hacer
+					si vDatos[i]=editar Entonces
+						escribir "Dime el nombre que quieres ponerle";
+						leer nomedit;
+						vDatos[i] = nomedit;
+					FinSi
+				FinPara	
+				
+				
+			5:	
+				Para i=0 Hasta tam-1 con paso 1 Hacer
+					si (vDatos[i]<>"") entonces
+						escribir vDatos[i]; 
+					FinSi
+				FinPara
+				
+				
 			De Otro Modo:
-				secuencia_de_acciones_dom
+				
 		Fin Segun
 	Hasta Que num==6
 	
