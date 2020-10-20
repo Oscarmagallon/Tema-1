@@ -1,6 +1,6 @@
 Algoritmo vAgenda
 	Definir num,i,tam como Entero;
-	Definir nombre,nombusc,vDatos,telefono,nomcomp,borrado,editar,nomedit como caracter;
+	Definir nombre,nombusc,vDatos,telefono,nomcomp,borrado,editar,nomedit,aux como caracter;
 	num=0;
 	tam=10;
 	Dimension vDatos[tam];
@@ -39,10 +39,10 @@ Algoritmo vAgenda
 				Escribir "Dime el nombre a buscar";
 				leer nombusc;
 				para i= 0 Hasta tam-1 con paso 1 Hacer
-					si Subcadena(vDatos[i],i,i)==";" Entonces
+					si Subcadena(vDatos[i],i,i) <> "" y Subcadena(vDatos[i],i,i) = ";" Entonces
 						si Subcadena(vDatos[i],0,i) == nombusc Entonces
 							Escribir "El nombre es ",nombusc
-							Escribir "El apellido es: ", Subcadena(vDatos[i],i,Longitud(vDatos[i]))
+							Escribir "El telefono es es: ", Subcadena(vDatos[i],i,Longitud(vDatos[i]))
 							
 						FinSi
 					FinSi
@@ -54,8 +54,8 @@ Algoritmo vAgenda
 			3:
 				Escribir "Dime el nombre del empleado a borrar";
 				leer borrado;
-				Para i=0 Hasta tam-1 Con Paso 1 Hacer
-					si vDatos[i]=borrado Entonces
+				Para i=0 Hasta Longitud(borrado)-1 Con Paso 1 Hacer
+					si subcadena(vDatos[i],0,Longitud(borrado))=borrado Entonces
 						vDatos[i] = "";
 					FinSi
 				FinPara	
@@ -74,11 +74,12 @@ Algoritmo vAgenda
 				FinPara	
 				
 				
-			5:	
-				Para i=0 Hasta tam-1 con paso 1 Hacer
-					si (vDatos[i]<>"") entonces
-						escribir vDatos[i]; 
-					FinSi
+			5:
+				Para i=Longitud(vDatos[i]) Hasta tam-1 con paso -1 Hacer
+					aux=subcadena(vDatos[i],i,i)
+					Si aux==";" Entonces
+						Escribir "El nombre es: ",Subcadena(vDatos[i],i,0)
+					Fin Si
 				FinPara
 				
 				
@@ -87,7 +88,7 @@ Algoritmo vAgenda
 		Fin Segun
 	Hasta Que num==6
 	Para i=0 Hasta tam-1 Con Paso 1 Hacer
-		Escribir vDatos[i]
+		
 	Fin Para
 FinAlgoritmo
 
