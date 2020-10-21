@@ -1,5 +1,5 @@
 Algoritmo vAgenda
-	Definir num,i,tam como Entero;
+	Definir num,i,tam,j como Entero;
 	Definir nombre,nombusc,vDatos,telefono,nomcomp,borrado,editar,nomedit,aux como caracter;
 	num=0;
 	tam=10;
@@ -38,14 +38,16 @@ Algoritmo vAgenda
 			2:
 				Escribir "Dime el nombre a buscar";
 				leer nombusc;
-				para i= 0 Hasta tam-1 con paso 1 Hacer
-					si Subcadena(vDatos[i],i,i) <> "" y Subcadena(vDatos[i],i,i) = ";" Entonces
-						si Subcadena(vDatos[i],0,i) == nombusc Entonces
-							Escribir "El nombre es ",nombusc
-							Escribir "El telefono es es: ", Subcadena(vDatos[i],i,Longitud(vDatos[i]))
-							
+				Para i=0 Hasta tam-1 Con Paso 1 Hacer
+				Si (vDatos[i]<>"") Entonces
+					Para j = 0 hasta Longitud(vDatos[i])-1 Con Paso 1 Hacer
+						si (Subcadena(vDatos[i],j,j) == ";") Entonces
+							nombre=Subcadena(vDatos[i],0,j-1);
+							telefono =  Subcadena(vDatos[i],j+1,Longitud(vDatos[i]));
 						FinSi
-					FinSi
+					FinPara
+					Escribir "El nombre es: "
+				Fin Si
 					
 				
 				FinPara
@@ -75,11 +77,17 @@ Algoritmo vAgenda
 				
 				
 			5:
-				Para i=Longitud(vDatos[i]) Hasta tam-1 con paso -1 Hacer
-					aux=subcadena(vDatos[i],i,i)
-					Si aux==";" Entonces
-						Escribir "El nombre es: ",Subcadena(vDatos[i],i,0)
+				Para i=0 Hasta tam-1 con paso 1 Hacer
+					Si (vDatos[i]<>"") Entonces
+						Para j = 0 hasta Longitud(vDatos[i])-1 Con Paso 1 Hacer
+							si (Subcadena(vDatos[i],j,j) == ";") Entonces
+								nombre=Subcadena(vDatos[i],0,j-1);
+								telefono =  Subcadena(vDatos[i],j+1,Longitud(vDatos[i]));
+							FinSi
+						FinPara
+						Escribir nombre+ "-------"+telefono;
 					Fin Si
+				
 				FinPara
 				
 				
