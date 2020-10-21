@@ -1,3 +1,27 @@
+Funcion nombre<-dameNombre(aux)
+	Definir i Como Entero;
+	Definir nombre Como Caracter;
+	
+	Para i = 0 hasta Longitud(aux)-1 Con Paso 1 Hacer
+		si (Subcadena(aux,i,i) == ";") Entonces
+			nombre=Subcadena(aux,0,i-1);
+			//telefono =  Subcadena(aux,i+1,Longitud(aux));
+		FinSi
+	FinPara
+FinFuncion
+
+Funcion telefono<-dameTelefono(aux)
+	Definir i Como Entero;
+	
+	Para i = 0 hasta Longitud(aux)-1 Con Paso 1 Hacer
+		si (Subcadena(aux,i,i) == ";") Entonces
+			//nombre=Subcadena(aux,0,i-1);
+			telefono =  Subcadena(aux,i+1,Longitud(aux));
+		FinSi
+	FinPara
+FinFuncion
+
+
 Algoritmo vAgenda
 	Definir num,i,tam,j como Entero;
 	Definir nombre,nombusc,vDatos,telefono,nomcomp,borrado,editar,nomedit,aux como caracter;
@@ -12,8 +36,8 @@ Algoritmo vAgenda
 	
 	
 	Repetir
-		Escribir "1- Añadir contacto"; 
-		Escribir "2- Buscar contacto"; 
+		Escribir "1- Añadir contacto"; //Good
+		Escribir "2- Buscar contacto"; //Goog
 		Escribir "3- Borrar contacto"; 
 		Escribir "4- Editar contacto"; 
 		Escribir "5- Ver todos los contactos";
@@ -39,15 +63,17 @@ Algoritmo vAgenda
 				Escribir "Dime el nombre a buscar";
 				leer nombusc;
 				Para i=0 Hasta tam-1 Con Paso 1 Hacer
-				Si (vDatos[i]<>"") Entonces
-					Para j = 0 hasta Longitud(vDatos[i])-1 Con Paso 1 Hacer
-						si (Subcadena(vDatos[i],j,j) == ";") Entonces
-							nombre=Subcadena(vDatos[i],0,j-1);
-							telefono =  Subcadena(vDatos[i],j+1,Longitud(vDatos[i]));
-						FinSi
-					FinPara
-					Escribir "El nombre es: "
-				Fin Si
+					Si (vDatos[i]<>"") Entonces
+						aux = vDatos[i]; // Guardo en aux el texto nombre;telefono
+						Para j = 0 hasta Longitud(aux)-1 Con Paso 1 Hacer
+							si (Subcadena(aux,j,j) == ";") Entonces
+								nombre=Subcadena(aux,0,j-1);
+								telefono =  Subcadena(aux,j+1,Longitud(aux));
+							FinSi
+						FinPara
+						Escribir "El nombre es: ", nombre, "Y el telefono es: ", telefono;
+					
+					Fin Si
 					
 				
 				FinPara
@@ -56,11 +82,18 @@ Algoritmo vAgenda
 			3:
 				Escribir "Dime el nombre del empleado a borrar";
 				leer borrado;
-				Para i=0 Hasta Longitud(borrado)-1 Con Paso 1 Hacer
-					si subcadena(vDatos[i],0,Longitud(borrado))=borrado Entonces
-						vDatos[i] = "";
+				para j=0 hasta tam-1 con paso 1 Hacer
+					si vDatos[j] <> "" Entonces
+						aux=vDatos[j];
+						//Comparar nombre troceado y telefono
+						Si (borrado == dameNombre(aux) o borrado == dameTelefono(aux))
+							vDatos[j]="";
+						FinSi
 					FinSi
-				FinPara	
+				FinPara
+				
+				
+				
 				
 				
 				
