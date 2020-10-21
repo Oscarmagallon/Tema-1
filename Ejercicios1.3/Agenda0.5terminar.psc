@@ -24,7 +24,7 @@ FinFuncion
 
 Algoritmo vAgenda
 	Definir num,i,tam,j como Entero;
-	Definir nombre,nombusc,vDatos,telefono,nomcomp,borrado,editar,nomedit,aux como caracter;
+	Definir nombre,nombusc,vDatos,telefono,nomcomp,borrado,editar,nomedit,aux,auxnombre,auxtelefono como caracter;
 	num=0;
 	tam=10;
 	Dimension vDatos[tam];
@@ -38,9 +38,9 @@ Algoritmo vAgenda
 	Repetir
 		Escribir "1- Añadir contacto"; //Good
 		Escribir "2- Buscar contacto"; //Goog
-		Escribir "3- Borrar contacto"; 
+		Escribir "3- Borrar contacto"; //Good
 		Escribir "4- Editar contacto"; 
-		Escribir "5- Ver todos los contactos";
+		Escribir "5- Ver todos los contactos"; //Good
 		Escribir "6- Salir"; 
 		Escribir "Dime un numero";
 		leer num;
@@ -48,7 +48,7 @@ Algoritmo vAgenda
 			1:
 				Escribir "Dime el nombre del contacto";
 				Leer nombre;
-				Escribir "Dime el telefono a buscar";
+				Escribir "Dime el telefono del contacto";
 				Leer telefono;
 				nomcomp=nombre+";"+telefono;
 				
@@ -101,10 +101,16 @@ Algoritmo vAgenda
 				Escribir "¿Que contacto quieres editar?";
 				leer editar;
 				Para i=0 Hasta tam-1 Con Paso 1 Hacer
-					si vDatos[i]=editar Entonces
-						escribir "Dime el nombre que quieres ponerle";
-						leer nomedit;
-						vDatos[i] = nomedit;
+					si vDatos[i]<>"" Entonces
+						Si editar==dameNombre(aux) Entonces
+							Escribir "Dime el nombre"
+							Leer auxnombre
+							Escribir "Dime el telefono"
+							Leer auxtelefono
+							vDatos[i]=auxnombre+";"+auxtelefono;
+						
+						Fin Si
+						
 					FinSi
 				FinPara	
 				
