@@ -31,5 +31,11 @@ Algoritmo ejer6
 		FinPara
 	FinPara
 	
+	nums(n,m,mDatos)
+	para i = 0 hasta m-1 Con Paso 1 Hacer
+		Para j=0 Hasta n-1 Con Paso 1 Hacer
+			Escribir Sin Saltar mDatos[i,j]
+		Fin Para
+	FinPara
 	
 FinAlgoritmo
