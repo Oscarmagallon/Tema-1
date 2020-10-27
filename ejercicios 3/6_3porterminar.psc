@@ -1,4 +1,5 @@
 SubProceso nums(n,m,mDatos) 
+	Definir i,j Como Entero;
 	Para i=0 hasta m-1 con paso 1 Hacer
 		si mDatos[i,0] == 0 Entonces
 			mDatos[i,0] =azar(9);
@@ -11,24 +12,26 @@ SubProceso nums(n,m,mDatos)
 			FinSi
 		Fin Para
 			
-		FinPara
+	FinPara
 	
 	
 FinSubProceso
 
 Algoritmo ejer6
 
-	Definir m,n,mDatos Como Entero;
+	Definir m,n,mDatos,i,j Como Entero;
 	
 	Escribir "Dime el tamaño de las filas";
 	Leer m;
 	Escribir "Dime el tamaño de las columnas";
 	Leer n;
 	Dimension mDatos[m,n];
-	Para i=0 hasta m-1 Con Paso 1 Hacer
-		para j = 0 hasta n-1 con paso 1 Hacer
-			mDatos[i,j] = 0;
+	nums(n,m,mDatos);
+	Para  i = 0 Hasta m-1 Con Paso 1 Hacer
+		para j = 0 hasta n-1 Con Paso 1 Hacer
+			Escribir Sin Saltar mDatos[i,j]," ";
 		FinPara
+		Escribir "";
 	FinPara
 	
 	nums(n,m,mDatos)
