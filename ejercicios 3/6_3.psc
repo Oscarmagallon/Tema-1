@@ -14,7 +14,14 @@ SubProceso nums(n,m,mDatos)
 			
 	FinPara
 	
-	
+FinSubProceso
+SubProceso mostra(n,m,mDatos,i,j) 
+	Para  i = 0 Hasta m-1 Con Paso 1 Hacer
+		para j = 0 hasta n-1 Con Paso 1 Hacer
+			Escribir Sin Saltar mDatos[i,j]," ";
+		FinPara
+		Escribir "";
+	FinPara
 FinSubProceso
 
 Algoritmo ejer6
@@ -27,18 +34,6 @@ Algoritmo ejer6
 	Leer n;
 	Dimension mDatos[m,n];
 	nums(n,m,mDatos);
-	Para  i = 0 Hasta m-1 Con Paso 1 Hacer
-		para j = 0 hasta n-1 Con Paso 1 Hacer
-			Escribir Sin Saltar mDatos[i,j]," ";
-		FinPara
-		Escribir "";
-	FinPara
 	
-	nums(n,m,mDatos)
-	para i = 0 hasta m-1 Con Paso 1 Hacer
-		Para j=0 Hasta n-1 Con Paso 1 Hacer
-			Escribir Sin Saltar mDatos[i,j]
-		Fin Para
-	FinPara
-	
+	mostra(n,m,mDatos,i,j);
 FinAlgoritmo
